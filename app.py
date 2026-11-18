@@ -13,4 +13,12 @@ if role == "Other":
   st.text_input('Enter your Job Title','xxxxxxxxx')
 model = st.selectbox('Model',['openai/gpt-oss-120b','openai/gpt-oss-20b'])
 level = st.selectbox('Level',['Beginner','intermediate','Advance'])
-mode = st.radio('Activity',['Generate Questions','Evaluate Answers','Improve Answers'])
+mode = st.radio('Activity',['Generate Questions','Evaluate Answers','Improve Answers']) 
+if mode == 'Generate Questions':
+  count = st.slider("Number of Questions",1,10,5)
+elif mode == 'Generate Code Questions':
+  topic = st.selection('Topics',['SQL','AIML','Python','DSA','PHP','Web Development'])
+  count = st.slider("Number of Questions",1,10,5)
+else:
+  question = st.text_area('Enter Interview Question here')
+  answer = st.text_area('Enter your answer',height = 160)
