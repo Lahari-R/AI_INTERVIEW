@@ -2,7 +2,7 @@ import streamlit as st
 from groq import Groq
 st.set_page_config(page_title = 'AI assistant interview', layout='centered')
 st.title("AI Interview Assistant")
-st.caption("Launched By Bhavana SO")
+st.caption("Launched By Lahari R")
 try:
   client = Groq(api_key = st.secrets["GROQ_API_KEY"])
 except (KeyError, FileNotFound):
@@ -40,8 +40,19 @@ with st.spinner("Generating your answer ...");
 try:
   response = client.chat.completions.create(
   model =gen_model,
-messages = [{"role":"system","content"Act as a senior Interview,both HR and Technical expert"},
+messages = [{"role":"system",
+             "content:"Act as a Senior Interview both HR and Technical expert"},
 {"role": "user",
 "content" : background + task }],
 temperature = 0.7,
+max_tokens = 1800)
+output = response.choices[0].message.content
+st.subheader("AI Response ")
+st.markdown(output)
+st.download_button("Download Response", output , file_name = "Interview_Response",mime = 'text/plain')
+except Exception as e:
+st.error("API connection was unsuccrssfull")
+st info("Please check your API Key and rate limits")
+st.caption("Powered by streamlit.io and GitHub. Using LLM API")
+
 }]
