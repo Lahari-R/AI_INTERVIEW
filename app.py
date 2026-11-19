@@ -27,4 +27,13 @@ else:
             st.warning("Plese enter a valid Question and Answer")
             st.stop()
     topics = "Topics is" + topic + "Difficulty is" + level
+if mode = "Generate Questions":
+  task = "Generate" + str(count) + " Frequently asked Interview Questions 3 Theory and 2 scenario.Do not give answers.Give Hints"
+elif mode == "Generate Code Questions":
+task = "Generate" + str(count) + " Frequently asked coding questions on topic" + "and give hints to solve them.Be accurate."
+elif mode == "Evaluate Answers":
+task = "Question:" + question + " My Answer :" + answer + " Evaluate this answer based on concept,relevance,comminication,length of answer.Give each rating out of 5 in a list."
+elif mode == "Improve Answers":
+task = "Question:"+question+" My Answer:"+ answer + "Improve the answer based on choice of word,Improve technical accuracy and conceptual clarity,Improved Answer."
+
 
