@@ -2,7 +2,7 @@ import streamlit as st
 from groq import Groq
 st.set_page_config(page_title = 'AI assistant interview', layout='centered')
 st.title("AI Interview Assistant")
-st.caption("Launched By Lahari R")
+st.caption("Launched By Bhavana SO")
 try:
   client = Groq(api_key = st.secrets["GROQ_API_KEY"])
 except (KeyError, FileNotFound):
@@ -22,7 +22,7 @@ elif mode == 'Generate Code Questions':
 else:
   questions = st.text_area('Enter Interview Questions here')
   answer = st.text_area('Enter your answer', height =160)
-if st.button("Generate AI  Response",type ="primary"):
-  if mode ==(['Evaluate Answer','Improve Answer'] and (not question.strip())( not answer.strip()):
-  st.warning("Please enter a valid Question and Answer")
-  st.stop
+  if st.button("Generate AI Response",type="primary"):
+  if mode==(['Evaluate Answers','Improve Answers']and(not question.strip()) or (not answer.strip()):
+            st.warning("Plese enter a valid Question and Answer")
+            st.stop
